@@ -104,7 +104,7 @@ A: For more information about Ruby, its features, and its community, visit the o
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ClaudiaRojasSoto/Catalog_Of_My_Things/issues) and contribute to the project.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ClaudiaRojasSoto/Blog_App/issues) and contribute to the project.
 
 ## ⭐️ Show Your Support <a name="support"></a>
 
