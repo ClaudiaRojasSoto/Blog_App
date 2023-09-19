@@ -36,6 +36,8 @@ This project is built using Ruby on Rails, a dynamic, open-source programming la
 - [x] **Data Model**
 - [x] **Associations Between Models**
 - [x] **SQL Queries**
+- [x] **Validations**
+- [x] **Models Specs**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
