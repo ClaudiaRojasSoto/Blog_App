@@ -8,6 +8,7 @@
   - [🛠 Tech-stack ](#-tech-stack-)
   - [🛠 Built With ](#-built-with-)
   - [Key Features ](#key-features-)
+  - [Future Features ](#future-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Setup ](#setup-)
     - [Prerequisites ](#prerequisites-)
@@ -38,6 +39,17 @@ This project is built using Ruby on Rails, a dynamic, open-source programming la
 - [x] **SQL Queries**
 - [x] **Validations**
 - [x] **Models Specs**
+
+## Future Features <a name="future-project"></a>
+
+- [ ] **Controllers**
+- [ ] **Controllers specs**
+- [ ] **Views**
+- [ ] **Forms**
+- [ ] **Integration specs for Views**
+- [ ] **Devise**
+- [ ] **Authorization Rules**
+- [ ] **API endpoints.**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
