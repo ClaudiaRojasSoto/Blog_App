@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
   def index
-    # Obtén la lista de todos los usuarios
+    # Catch the user list
     @users = User.all
 
-    # Resto de la lógica para mostrar la lista de usuarios en la vista
+    # Rest of the logic to show the user list on the view
   end
 
   def show
-    # Encuentra al usuario cuyo ID coincide con el parámetro 'id' en la URL
+    # Found the user with the same ID of the parameter 'id' on the URL
     @user = User.find(params[:id])
 
-    # Resto de la lógica para mostrar la información del usuario en la vista
+    # Rest of the logic to show the user information on the view
   end
 end
