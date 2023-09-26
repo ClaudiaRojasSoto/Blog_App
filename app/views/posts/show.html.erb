@@ -1,1 +1,20 @@
 <h1>Total Comments</h1>
+<div class="post">
+  <h2><%= @post.title %> by <%= @user.name %></h2>
+  <p><%= @post.text %></p>
+  <p>Total Comments: <%= @post.comments.count %></p>
+  <p>Total Likes: <%= @post.likes.count %></p>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.author.name %>: <%= comment.text %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% if @prev_post.present? %>
+  <%= link_to "Previous Post", user_post_path(@user, @prev_post) %>
+<% end %>
+
+<% if @next_post.present? %>
+  <%= link_to "Next Post", user_post_path(@user, @next_post) %>
+<% end %>
