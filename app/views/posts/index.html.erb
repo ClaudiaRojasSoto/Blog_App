@@ -1,2 +1,31 @@
 <h1>All Posts</h1>
+<div class="user-profile">
+  <!-- Mostrar la información básica del usuario -->
+  <ul>
+    <li><img src="<%= @user.photo %>" alt="<%= @user.name %>'s photo"></li>
+    <li><%= @user.name %></li>
+    <li>Number of posts: <%= @user.posts.count %></li>
+  </ul>
+</div>
 
+<h2>All Posts:</h2>
+
+<div id="post-container">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+      <p><%= post.text %></p>
+
+      <p>Total Comments: <%= post.comments.count %></p>
+      <p>Total Likes: <%= post.likes.count %></p>
+
+      <ul>
+        <% post.comments.each do |comment| %>
+          <li><%= comment.author.name %>: <%= comment.text %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @posts %>
