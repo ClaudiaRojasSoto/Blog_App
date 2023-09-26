@@ -1,2 +1,41 @@
 <h1>All Posts</h1>
+<div>
+  <div class="user-card flex">
+    <div class="user-image border">
+      <img src="<%= @user.photo %>" alt="<%= @user.name %>'s photo" width="100%" heigth="100%">
+    </div>
+    <div class="user-info border">
+      <h2><%= @user.name %></h2>
+      <p class="posts-number">Number of posts: <%= @user.posts.count %></p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <div class="user-card left">
+          <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+          <br>
+          <p><%= post.text %></p>
+          <div class="right">
+            <span class="span-post">Comments: <%= post.comments.count %></span>
+            <span class="span-post">Likes: <%= post.likes.count %></span>
+          </div>
+        </div>
+        <div class="user-card left">
+          <ul>
+            <h5>All the Comments:</h5>
+            <br>
+            <% post.five_most_recent_comments.each do |comment| %>
+            <li><%= comment.author.name %>: <%= comment.text %></li>
+            <% end %>
+          </ul>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%= paginate @posts, param_name: 'page', class: 'button' %>
 

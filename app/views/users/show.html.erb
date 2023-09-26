@@ -1,1 +1,31 @@
 <h1>User Information</h1>
+<div class="user-card flex">
+  <div class="user-image border">
+    <img src="<%= @user.photo %>" alt="<%= @user.name %>'s photo" width="100% heigth="100%">
+  </div>
+  <div class="user-info border">
+    <h2><%= @user.name %></h2>
+    <p class="posts-number">Number of posts: <%= @user.posts.count %></p>
+  </div>
+</div>
+<div class="user-card left">
+  <h3>Bio:</h3>
+  <br>
+  <p><%= @user.bio %></p>
+</div>
+<div>
+   <ul>
+    <% @user.three_most_recent_posts.each do |post| %>
+      <li class="user-card left">
+        <h3><%= post.title %></h3>
+        <br>
+        <p><%= post.text %></p>
+       <div class="right">
+        <span class="span-post">Comments: <%= post.comments.count %></span>
+        <span class="span-post">Likes: <%= post.likes.count %></span>
+       </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to "See All Posts", user_posts_path(@user), method: :get, class: "button" %>
+</div>

@@ -1,1 +1,29 @@
-<h1>Total Comments</h1>
+<h2>Total Comments</h2>
+<div>
+  <div class="user-card left">
+    <h3><%= @post.title %> by <%= @user.name %></h3>
+    <div class="right">
+        <span class="span-post">Comments: <%= @post.comments.count %></span>
+        <span class="span-post">Likes: <%= @post.likes.count %></span>
+      </div>
+      <br>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="user-card left">
+    <ul>
+      <h5>All the Comments:</h5>
+      <br>
+        <% @post.comments.each do |comment| %>
+          <li><%= comment.author.name %>: <%= comment.text %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<% if @prev_post.present? %>
+  <%= button_to "Previous Post", user_post_path(@user, @prev_post), method: :get, class: "button" %>
+<% end %>
+
+<% if @next_post.present? %>
+  <%= button_to "Next Post", user_post_path(@user, @next_post), method: :get, class: "button" %>
+<% end %>
