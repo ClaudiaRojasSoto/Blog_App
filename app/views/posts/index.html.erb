@@ -28,7 +28,7 @@
           <ul>
             <h5>All the Comments:</h5>
             <br>
-            <% post.comments.each do |comment| %>
+            <% post.five_most_recent_comments.each do |comment| %>
             <li><%= comment.author.name %>: <%= comment.text %></li>
             <% end %>
           </ul>
