@@ -85,6 +85,7 @@ a {
   background: rgb(2, 2, 2);
 }
 
-.container-comments {
-  
+.pagination .page {
+  color: black;
+  text-decoration: none;
 }
