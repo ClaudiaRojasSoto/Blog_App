@@ -24,7 +24,7 @@
             <span class="span-post">Likes: <%= post.likes.count %></span>
           </div>
         </div>
-        <div class="container-comments user-card left">
+        <div class="user-card left">
           <ul>
             <h5>All the Comments:</h5>
             <br>
@@ -37,4 +37,5 @@
     <% end %>
   </ul>
 </div>
-<%= paginate @posts %>
+<%= paginate @posts, param_name: 'page', class: 'button' %>
+
