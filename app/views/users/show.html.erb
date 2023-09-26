@@ -15,7 +15,7 @@
 </div>
 <div>
    <ul>
-    <% @user.posts.limit(3).each do |post| %>
+    <% @user.three_most_recent_posts.each do |post| %>
       <li class="user-card left">
         <h3><%= post.title %></h3>
         <br>
