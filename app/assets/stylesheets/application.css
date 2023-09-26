@@ -68,6 +68,10 @@ a {
   text-align: right;
 }
 
+.span-post {
+  font-size: 12px;
+}
+
 .button {
   border: 0;
   border-radius: 0.2rem;
@@ -79,4 +83,8 @@ a {
 
 .button:hover {
   background: rgb(2, 2, 2);
+}
+
+.container-comments {
+  
 }
