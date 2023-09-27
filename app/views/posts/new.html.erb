@@ -1,3 +1,5 @@
+<h1>New Post</h1>
+
 <%= form_with(model: [@user, @post], url: user_posts_create_path(@user)) do |form| %>
   <!-- Formulario para el nuevo post -->
   <div class="field">
@@ -14,3 +16,5 @@
     <%= form.submit 'Create Post' %>
   </div>
 <% end %>
+
+<%= link_to 'Back', user_posts_path(@user), class: 'button' %>
