@@ -1,0 +1,6 @@
+<%# create.js.erb %>
+<%= turbo_stream.replace(
+  @post, 
+  partial: "likes_count", # Esto debe ser el nombre de tu parcial para mostrar el contador de likes
+  locals: { post: @post }
+) %>
