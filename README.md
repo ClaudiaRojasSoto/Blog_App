@@ -42,6 +42,7 @@ This project is built using Ruby on Rails, a dynamic, open-source programming la
 - [x] **Controllers**
 - [x] **Controllers specs**
 - [x] **Views**
+- [x] **Forms**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -101,7 +102,6 @@ This project was developed by:
 
 ## Future Features <a name="future-project"></a>
 
-- [ ] **Forms**
 - [ ] **Integration specs for Views**
 - [ ] **Devise**
 - [ ] **Authorization Rules**
