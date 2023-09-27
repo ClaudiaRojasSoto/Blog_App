@@ -1,0 +1,19 @@
+<h2>New Post</h2>
+
+<%= form_with(model: [@user, @post], url: user_posts_create_path(@user), class: 'post-form') do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Post', class: 'button' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', user_posts_path(@user), class: 'button' %>

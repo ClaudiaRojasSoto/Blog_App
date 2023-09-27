@@ -1,24 +1,37 @@
-# app/controllers/posts_controller.rb
-
 class PostsController < ApplicationController
+  before_action :find_user
+
   def index
-    # Catch the user which 'author_id' is the same as the parameter 'user_id' on the URL
-    @user = User.find(params[:user_id])
-
-    # Catch all the posts associates to this user and paginate them
     @posts = @user.posts.page(params[:page]).per(3)
+  end
 
-    # @posts = @user.posts.paginate(page: params[:page], per_page: 4)
-
-    # Rest of the logic to show the posts on the view
+  def create
+    @post = @user.posts.build(post_params)
+    if @post.save
+      redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
+    else
+      flash.now[:alert] = 'Post creation failed!'
+      render :new
+    end
   end
 
   def show
-    # Found the post which 'id' is the same as the parameter 'id' on the URL
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
     @next_post = @user.posts.where('id > ?', @post.id).first
     @prev_post = @user.posts.where('id < ?', @post.id).last
-    # Rest of the logic to show the information of the post on the view
+  end
+
+  def new
+    @post = @user.posts.build
+  end
+
+  private
+
+  def find_user
+    @user = User.find(params[:user_id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 end

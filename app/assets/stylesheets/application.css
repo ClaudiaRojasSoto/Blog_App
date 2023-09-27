@@ -89,3 +89,46 @@ a {
   color: black;
   text-decoration: none;
 }
+
+/* Estilos para el formulario de nuevo post y nuevo comentario */
+.post-form,
+.comment-form {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.post-form label,
+.comment-form label {
+  font-weight: bold;
+}
+
+.post-form textarea,
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.post-form .button,
+.comment-form .button {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-form .button:hover,
+.comment-form .button:hover {
+  background-color: #0056b3;
+}
+
+.top {
+  margin-top: 10px;
+}

@@ -1,0 +1,5 @@
+<%= turbo_stream.replace(
+  @post, 
+  partial: "likes_count",
+  locals: { post: @post }
+) %>

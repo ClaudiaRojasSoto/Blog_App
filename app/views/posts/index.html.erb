@@ -12,16 +12,18 @@
 </div>
 
 <div>
+  <%= link_to 'New Post', new_user_post_path(@user), class: 'button' %>
   <ul>
     <% @posts.each do |post| %>
       <li>
         <div class="user-card left">
           <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
           <br>
-          <p><%= post.text %></p>
+          <p><%= post.content %></p>
           <div class="right">
             <span class="span-post">Comments: <%= post.comments.count %></span>
-            <span class="span-post">Likes: <%= post.likes.count %></span>
+            <span class="span-post" data-target="likes_count">Likes: <%= post.likes.count %></span>
+
           </div>
         </div>
         <div class="user-card left">
@@ -37,5 +39,6 @@
     <% end %>
   </ul>
 </div>
+
 <%= paginate @posts, param_name: 'page', class: 'button' %>
 
