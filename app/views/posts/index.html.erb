@@ -12,6 +12,8 @@
 </div>
 
 <div>
+<!-- Agregar enlace para crear un nuevo post -->
+  <%= link_to 'New Post', new_user_post_path(@user), class: 'button' %>
   <ul>
     <% @posts.each do |post| %>
       <li>
@@ -37,5 +39,6 @@
     <% end %>
   </ul>
 </div>
+
 <%= paginate @posts, param_name: 'page', class: 'button' %>
 
