@@ -21,13 +21,12 @@
   </div>
 </div>
 
-<!-- Enlace para crear un nuevo comentario -->
-<%= link_to 'New Comment', new_user_post_comment_path(@user, @post), class: 'button' %>
+<%= link_to 'New Comment', new_user_post_comment_path(@user, @post), class: 'button top' %>
 
 <% if @prev_post.present? %>
-  <%= button_to "Previous Post", user_post_path(@user, @prev_post), method: :get, class: "button" %>
+  <%= button_to "Previous Post", user_post_path(@user, @prev_post), method: :get, class: "button top" %>
 <% end %>
 
 <% if @next_post.present? %>
-  <%= button_to "Next Post", user_post_path(@user, @next_post), method: :get, class: "button" %>
+  <%= button_to "Next Post", user_post_path(@user, @next_post), method: :get, class: "button top" %>
 <% end %>
