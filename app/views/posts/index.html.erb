@@ -23,7 +23,8 @@
           <p><%= post.content %></p>
           <div class="right">
             <span class="span-post">Comments: <%= post.comments.count %></span>
-            <span class="span-post">Likes: <%= post.likes.count %></span>
+            <span class="span-post" data-target="likes_count">Likes: <%= post.likes.count %></span>
+
           </div>
         </div>
         <div class="user-card left">
