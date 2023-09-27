@@ -6,10 +6,9 @@ class LikesController < ApplicationController
 
     if @like.save
       flash.now[:notice] = 'Liked the post!'
-      redirect_to user_post_path(@user, @post) # Redirige de nuevo a la página del post
+      redirect_to user_post_path(@user, @post)
     else
       flash.now[:alert] = 'Failed to like the post!'
-      # Puedes manejar errores aquí si es necesario
     end
   end
 
