@@ -4,7 +4,9 @@
     <h3><%= @post.title %> by <%= @user.name %></h3>
     <div class="right">
       <span class="span-post">Comments: <%= @post.comments.count %></span>
-      <span class="span-post">Likes: <%= @post.likes.count %></span>
+      <span class="span-post" data-target="likes_count">Likes: <%= @post.likes.count %></span>
+      <%= button_to "Like", user_post_likes_path(@user, @post), method: :post, class: "button", remote: true %>
+
     </div>
     <br>
     <p><%= @post.content %></p>
