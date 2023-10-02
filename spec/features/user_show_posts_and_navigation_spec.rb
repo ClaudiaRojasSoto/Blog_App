@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'UserShowPostsAndNavigation', type: :feature do
   let(:user) { create(:user) }
   let!(:posts) { create_list(:post, 3, author: user).sort_by(&:created_at).reverse }
-let!(:first_post) { posts.first }
+  let!(:first_post) { posts.first }
 
   before do
     visit user_path(user)
@@ -31,5 +31,4 @@ let!(:first_post) { posts.first }
     puts "Debug: Current path is #{page.current_path}"
     expect(page).to have_current_path(user_post_path(user, first_post))
   end
-  
 end
