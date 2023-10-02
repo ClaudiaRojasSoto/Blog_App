@@ -1,7 +1,7 @@
 <h1 class="index-title">All Users</h1>
 <ul class="user-list">
   <% @users.each do |user| %>
-    <li class="user-card flex">
+    <li class="user-card flex" id="user-card-<%= user.id %>">
       <div class="user-image border">
         <img src="<%= user.photo %>" alt="<%= user.name %>'s photo" width="100% heigth="100%">
       </div>
