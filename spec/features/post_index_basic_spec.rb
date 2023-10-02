@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'UserPostsIndexPart1', type: :feature do
   let!(:user) { create(:user) }
   let!(:posts) { create_list(:post, 5, author: user) }
