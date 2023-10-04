@@ -90,7 +90,6 @@ a {
   text-decoration: none;
 }
 
-/* Estilos para el formulario de nuevo post y nuevo comentario */
 .post-form,
 .comment-form {
   background-color: #f8f8f8;
@@ -138,21 +137,18 @@ a {
   display: inline-block;
 }
 
-/* Contenedor flex para la etiqueta y el campo */
 .flex-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-/* Contenedor para la etiqueta y el aviso */
 .label-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Nueva clase para ajustar el aviso sobre el mínimo de caracteres */
 .password-notice {
   font-size: smaller;
 }
