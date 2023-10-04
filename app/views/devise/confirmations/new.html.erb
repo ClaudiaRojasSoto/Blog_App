@@ -4,12 +4,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'post-form textarea' %>
+    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'input-with-label' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions", class: 'post-form button' %>
+    <%= f.submit "Resend confirmation instructions", class: 'post-form-button' %>
   </div>
 <% end %>
 
