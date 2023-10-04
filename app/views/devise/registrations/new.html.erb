@@ -4,25 +4,29 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, class: 'label-fixed-width' %>
     <%= f.text_field :name, autocomplete: "name", class: 'post-form textarea' %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email, class: 'label-fixed-width' %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'post-form textarea' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
+  <div class="field flex-container">
+    <div class="label-container">
+    <%= f.label :password, class: 'label-fixed-width' %>
+<div class="password-notice"> <!-- Nueva clase para el aviso -->
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+     </div>
+    </div>
     <%= f.password_field :password, autocomplete: "new-password", class: 'post-form textarea' %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, class: 'label-fixed-width' %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'post-form textarea' %>
   </div>
 

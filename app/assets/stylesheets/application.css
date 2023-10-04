@@ -132,3 +132,27 @@ a {
 .top {
   margin-top: 10px;
 }
+
+.label-fixed-width {
+  width: 123px;
+  display: inline-block;
+}
+
+/* Contenedor flex para la etiqueta y el campo */
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Contenedor para la etiqueta y el aviso */
+.label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Nueva clase para ajustar el aviso sobre el mínimo de caracteres */
+.password-notice {
+  font-size: smaller;
+}
