@@ -1,0 +1,33 @@
+<h2 class="index-title">Change your password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'post-form' }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <!-- Added class 'field' for consistency -->
+  <div class="field">
+    <!-- Removed flex-container and label-container, added 'input-with-label' -->
+    <%= f.label :password, "New password", class: 'input-with-label' %><br />
+    <% if @minimum_password_length %>
+      <em class="password-notice">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input-with-label' %>
+  </div>
+
+  <!-- Added class 'field' for consistency -->
+  <div class="field">
+    <!-- Removed flex-container and label-container, added 'input-with-label' -->
+    <%= f.label :password_confirmation, "Confirm new password", class: 'input-with-label' %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-with-label' %>
+  </div>
+
+  <!-- The submit button now has a class 'post-form-button' -->
+  <div class="actions">
+    <%= f.submit "Change my password", class: 'post-form-button' %>
+  </div>
+<% end %>
+
+<!-- This div already had the class 'top' -->
+<div class="top">
+  <%= render "devise/shared/links" %>
+</div>

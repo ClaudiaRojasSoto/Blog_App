@@ -90,7 +90,6 @@ a {
   text-decoration: none;
 }
 
-/* Estilos para el formulario de nuevo post y nuevo comentario */
 .post-form,
 .comment-form {
   background-color: #f8f8f8;
@@ -131,4 +130,42 @@ a {
 
 .top {
   margin-top: 10px;
+}
+
+.label-fixed-width {
+  width: 123px;
+  display: inline-block;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.password-notice {
+  font-size: smaller;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-with-label {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.post-form-button {
+  width: 100%;
+  height: 35px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
