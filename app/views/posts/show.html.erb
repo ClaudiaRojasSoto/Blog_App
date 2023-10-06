@@ -16,6 +16,9 @@
       <br>
       <% @post.comments.each do |comment| %>
         <li><%= comment.author.name %>: <%= comment.text %></li>
+        <% if comment.author_id == current_user.id or current_user.admin? %>
+        <%= button_to "Delete", delete_user_post_comment_path(@user, @post, comment), method: :delete, class: "button top" %>
+      <% end %>
       <% end %>
     </ul>
   </div>
@@ -29,4 +32,8 @@
 
 <% if @next_post.present? %>
   <%= button_to "Next Post", user_post_path(@user, @next_post), method: :get, class: "button top" %>
+<% end %>
+
+<% if can? :destroy, @post %>
+  <%= button_to "Delete the Post", delete_user_post_path(@user, @post), method: :delete, class: "button top" %>
 <% end %>
