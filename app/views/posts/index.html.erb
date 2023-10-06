@@ -12,7 +12,9 @@
 </div>
 
 <div>
+<% if @user == current_user or current_user.admin? %>
   <%= link_to 'New Post', new_user_post_path(@user), class: 'button' %>
+  <% end %>
   <ul>
     <% @posts.each do |post| %>
       <li>
@@ -42,4 +44,3 @@
 </div>
 
 <%= paginate @posts, param_name: 'page', class: 'button' %>
-
