@@ -1,4 +1,4 @@
-post controller completo:class PostsController < ApplicationController
+class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user
   load_and_authorize_resource # Carga y autoriza automáticamente los recursos
