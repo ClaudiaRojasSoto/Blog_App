@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user_and_post
+  load_and_authorize_resource
 
   def new
     @comment = Comment.new
@@ -17,11 +18,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = @post.comments.find(params[:comment_id])
+    if @comment.destroy
+      flash[:notice] = 'Comment deleted!'
+    else
+      flash[:alert] = 'Failed to delete comment!'
+    end
+    redirect_to user_post_path(@user, @post)
+  end
+
   private
 
   def find_user_and_post
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
+    @user = User.where(id: params[:user_id]).first
+    @post = Post.where(id: params[:post_id]).first
   end
 
   def comment_params
