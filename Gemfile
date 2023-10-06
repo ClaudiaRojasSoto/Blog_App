@@ -9,6 +9,8 @@ gem 'kaminari'
 
 gem 'devise'
 
+gem 'cancancan', '~> 1.9'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8'
 
