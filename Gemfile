@@ -3,7 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'active_model_serializers'
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'jwt'
 
 gem 'kaminari'
 
