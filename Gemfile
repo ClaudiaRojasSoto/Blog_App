@@ -11,6 +11,11 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.9'
 
+gem 'devise-jwt', '~> 0.10.0'
+gem 'rack-cors'
+
+gem 'active_model_serializers'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8'
 
