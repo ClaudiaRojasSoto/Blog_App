@@ -22,4 +22,11 @@ Rails.application.routes.draw do
 
   get '/user/:user_id/posts', to: 'posts#index', as: 'user_posts'
   get '/user/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
+
+  namespace :api, defaults: { format: :json } do
+    resources :sessions
+    resources :posts, only: [:index] do
+      resources :comments, only: [:index, :create]
+    end
+  end
 end
